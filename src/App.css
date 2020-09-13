@@ -1,38 +1,198 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;1,100;1,200&display=swap');
+:root{
+
+    --primaryColor: #f15025;
+    --mainWhite:#fff;
+    --mainBlack:#222;
+    --mainGrey:#9e9e9e;
+    --mainRed:#d50000;
+    --mainGreen:#4caf50;
+}
+*{
+    margin: 0;
+    box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+    background: var(--mainGrey);
+    color: var(--mainBlack);
+    font-family:'Raleway', sans-serif
+}
+h1{
+    text-align: center;
+    text-transform: capitalize;
+    margin: 2rem 0;
+    color: var(--mainWhite);
+    letter-spacing: 0.5px;
+
+}
+.btn{
+    text-decoration: none;
+    color: var(--mainWhite);
+    background-color: var(--primaryColor);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    display: block;
+    text-align: center;
+   border: none;
+   padding: 0 16px;
+   margin: 0 auto;
+   border-radius: 2px;
+   line-height:36px;
+   display: flex;
+   align-items: center;
+   height: 36px;
+   box-shadow: 0 1px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,,0.24);
+   transition: all 0.4s cubic-bezier(0.25,0.8,0.25,1);
+}
+.btn:hover{
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+.btn-icon{
+    margin-left:0.75rem;
+    font-size: 1.2rem;
+}
+/* app */
+.App{
+    margin: 0 auto;
+    max-width: 1280px;
+    
+  
+    width: 90%;
+    background: var(--mainWhite);
+    padding-bottom: 2rem;
+    border-radius: 2px;
+}
+/* expense Item */
+
+.item{
+    background-color: var(--mainWhite);
+    line-height:1.5rem;
+    list-style-type: none;
+    margin-bottom: 1rem;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #e0e0e0;
+    transition: all 0.4s linear;
+}
+.item:hover{
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25),0 10px 10px rgba(0,0,0,0.22);
+    transform: scale(1.05);
+}
+.info{
+    display: flex;
+    justify-content: space-between;
+    text-transform: capitalize;
+    flex: 0 0 60%;
+}
+.expense{
+    margin-right: 2rem;
+    color: var(--mainBlack);
+    font-weight: bolder;
+}
+.amount{
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--mainWhite);
+    background-color: var(--primaryColor);
+    border-radius: 2px;
+    padding: 1px 3px;
+}
+.clear-btn,
+.edit-btn{
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    outline: none;
+    cursor: pointer;
+}
+.clear-btn{
+    color: var(--mainRed);
+}
+.edit-btn{
+    color: var(--mainGreen);
+}
+.total{
+    font-weight: 500;
+    background-color: var(--primaryColor);
+    color: var(--mainWhite);
+    border-radius: 4px;
+    padding: 2px 5px;
+}
+/* expense list */
+/* form-control */
+.form-center{
+    display: flex;
+    padding: 0 1rem;
+}
+.form-group{
+   
+    padding: 1rem 0.75rem;
+    flex: 0 0 50%;
+}
+.form-control{
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--mainGrey);
+    border-radius: 0;
+    outline-style: none;
+    height: 3rem;
+    width: 100%;
+    font-size: 16px;
+    margin: 0 0 8px 0;
+    padding: 0;
+    
+}
+.form-group label{
+    display: block;
+    font-weight: bolder;
+    text-transform: capitalize;
+    color: var(--mainGrey);
+    font-size: 1rem;
+}
+.alert{
+    padding: 0.75rem 1.25rem;
+    text-align: center;
+    margin: 2rem auto 0 auto;
+    width: 90%;
+    border-radius: 2px;
+    text-transform: capitalize;
+    color: var(--mainWhite);
+}
+.alert-danger{
+    background: var(--mainRed);
+}
+.alert-success{
+    background-color: var(--mainGreen);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.list{
+    margin: 2rem 0.75rem 0 0.75rem;
+    border: none;
+    padding: 0;
 }
-
-.App-link {
-  color: #61dafb;
+@media(min-width:601px){
+    .App,
+    .list,
+    .alert{
+        width: 85%;
+    }
+    .list{
+        margin: 2rem auto 0 auto;
+    }
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@media(min-width:993px){
+    .App,
+    .list,
+    .alert{
+        width: 70%;
+    }
+    .list{
+        margin: 2rem auto 0 auto;
+    }
+    .info{
+        flex: 0 0 50%;
+    }
 }
